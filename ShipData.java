@@ -1,7 +1,7 @@
 /**
  * ============================================================
  *  FILE: ShipData.java
- *  PURPOSE: Stores all constant data for Puzzle 3 – The Five Ships.
+ *  PURPOSE: Stores all constant data for Puzzle 3 - The Five Ships.
  *
  *  This file acts as a central "dictionary" for the program.
  *  Instead of using raw numbers like 0, 1, 2 throughout the code,
@@ -9,7 +9,7 @@
  *  This makes the code far easier to read and debug.
  *
  *  DESIGN PATTERN USED: Constants Class
- *  All fields are static final — meaning they belong to the class
+ *  All fields are static final -- meaning they belong to the class
  *  itself (not any object), and cannot be changed once set.
  * ============================================================
  */
@@ -48,7 +48,7 @@ public class ShipData {
     };
 
     // ----------------------------------------------------------
-    //  INDEX CONSTANTS — NATIONALITY
+    //  INDEX CONSTANTS -- NATIONALITY
     //  These map each nationality to its index in the NAT array.
     //  Using named constants avoids "magic numbers" in the code.
     // ----------------------------------------------------------
@@ -59,7 +59,7 @@ public class ShipData {
     public static final int BRAZILIAN  = 4;
 
     // ----------------------------------------------------------
-    //  INDEX CONSTANTS — CHIMNEY COLOR
+    //  INDEX CONSTANTS -- CHIMNEY COLOR
     // ----------------------------------------------------------
     public static final int RED   = 0;
     public static final int GREEN = 1;
@@ -68,7 +68,7 @@ public class ShipData {
     public static final int WHITE = 4;
 
     // ----------------------------------------------------------
-    //  INDEX CONSTANTS — DESTINATION
+    //  INDEX CONSTANTS -- DESTINATION
     // ----------------------------------------------------------
     public static final int HAMBURG   = 0;
     public static final int MARSEILLE = 1;
@@ -77,7 +77,7 @@ public class ShipData {
     public static final int MANILA    = 4;
 
     // ----------------------------------------------------------
-    //  INDEX CONSTANTS — CARGO
+    //  INDEX CONSTANTS -- CARGO
     // ----------------------------------------------------------
     public static final int COFFEE = 0;
     public static final int TEA    = 1;
@@ -86,7 +86,7 @@ public class ShipData {
     public static final int CORN   = 4;
 
     // ----------------------------------------------------------
-    //  INDEX CONSTANTS — DEPARTURE TIME
+    //  INDEX CONSTANTS -- DEPARTURE TIME
     //  T5 = 5:00am, T6 = 6:00am, ..., T9 = 9:00am
     // ----------------------------------------------------------
     public static final int T5 = 0;

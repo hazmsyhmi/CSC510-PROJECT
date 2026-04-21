@@ -2,12 +2,12 @@
  * ============================================================
  * FILE: Printer.java
  * PURPOSE: Handles ALL console display and formatting for
- * Puzzle 3 – The Five Ships program.
+ * Puzzle 3 - The Five Ships program.
  *
  * WHY A SEPARATE FILE?
  * Separating display logic from solving logic follows the
  * "Separation of Concerns" principle. If we want to change
- * how output looks, we only touch this file — the solver
+ * how output looks, we only touch this file - the solver
  * algorithm (ShipSolver.java) stays untouched.
  *
  * This also makes debugging easier: if output looks wrong,
@@ -59,14 +59,14 @@ public class Printer {
      */
     public static void printBanner() {
         System.out.println();
-        System.out.println(CYAN + "╔══════════════════════════════════════════════════════════════╗" + RESET);
-        System.out.println(CYAN + "║" + RESET + BOLD + "         PUZZLE 3  —  THE FIVE SHIPS SOLVER                  "
-                + RESET + CYAN + " ║" + RESET);
-        System.out.println(CYAN + "║" + RESET + "         Discrete Structures Group Assignment                 " + CYAN
-                + "║" + RESET);
-        System.out.println(CYAN + "║" + RESET + "         Constraint-Based Logic Solver  |  Java               " + CYAN
-                + "║" + RESET);
-        System.out.println(CYAN + "╚══════════════════════════════════════════════════════════════╝" + RESET);
+        System.out.println(CYAN + "+==============================================================+" + RESET);
+        System.out.println(CYAN + "|" + RESET + BOLD + "         PUZZLE 3  -  THE FIVE SHIPS SOLVER                  "
+                + RESET + CYAN + " |" + RESET);
+        System.out.println(CYAN + "|" + RESET + "         Discrete Structures Group Assignment                 " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "|" + RESET + "         Constraint-Based Logic Solver  |  Java               " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "+==============================================================+" + RESET);
         System.out.println();
     }
 
@@ -78,21 +78,21 @@ public class Printer {
      * Prints the main interactive menu with all available options.
      */
     public static void printMenu() {
-        System.out.println(CYAN + "  ┌─────────────────────────────────────────────────────────┐" + RESET);
-        System.out.println(CYAN + "  │" + RESET + BOLD + "  MAIN MENU                                              "
-                + RESET + CYAN + "│" + RESET);
-        System.out.println(CYAN + "  ├─────────────────────────────────────────────────────────┤" + RESET);
-        System.out.println(CYAN + "  │" + RESET + "  [1] View all 15 puzzle clues                           " + CYAN
-                + "│" + RESET);
-        System.out.println(CYAN + "  │" + RESET + "  [2] Solve the puzzle (instant result)                  " + CYAN
-                + "│" + RESET);
-        System.out.println(CYAN + "  │" + RESET + "  [3] Step-by-step deduction walkthrough                 " + CYAN
-                + "│" + RESET);
-        System.out.println(CYAN + "  │" + RESET + "  [4] Quiz mode (guess the ships!)                       " + CYAN
-                + "│" + RESET);
-        System.out.println(CYAN + "  │" + RESET + "  [5] Exit                                               " + CYAN
-                + "│" + RESET);
-        System.out.println(CYAN + "  └─────────────────────────────────────────────────────────┘" + RESET);
+        System.out.println(CYAN + "  +---------------------------------------------------------+" + RESET);
+        System.out.println(CYAN + "  |" + RESET + BOLD + "  MAIN MENU                                              "
+                + RESET + CYAN + "|" + RESET);
+        System.out.println(CYAN + "  +---------------------------------------------------------+" + RESET);
+        System.out.println(CYAN + "  |" + RESET + "  [1] View all 15 puzzle clues                           " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "  |" + RESET + "  [2] Solve the puzzle (instant result)                  " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "  |" + RESET + "  [3] Step-by-step deduction walkthrough                 " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "  |" + RESET + "  [4] Quiz mode (guess the ships!)                       " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "  |" + RESET + "  [5] Exit                                               " + CYAN
+                + "|" + RESET);
+        System.out.println(CYAN + "  +---------------------------------------------------------+" + RESET);
         System.out.print("  Enter your choice: ");
     }
 
@@ -106,14 +106,14 @@ public class Printer {
      */
     public static void printClues() {
         System.out.println();
-        System.out.println(YELLOW + "  ┌─ ALL 15 PUZZLE CLUES ────────────────────────────────────┐" + RESET);
+        System.out.println(YELLOW + "  +-- ALL 15 PUZZLE CLUES ------------------------------------------+" + RESET);
 
         // Loop through all clues stored in ShipData
         for (String clue : ShipData.CLUES) {
-            System.out.println(YELLOW + "  │" + RESET + "  " + clue);
+            System.out.println(YELLOW + "  |" + RESET + "  " + clue);
         }
 
-        System.out.println(YELLOW + "  └──────────────────────────────────────────────────────────┘" + RESET);
+        System.out.println(YELLOW + "  +----------------------------------------------------------------+" + RESET);
         System.out.println();
     }
 
@@ -153,19 +153,19 @@ public class Printer {
      */
     public static void printSolutionTable(ShipSolver solver) {
         System.out.println();
-        System.out.println(GREEN + "  ✔ Solution found in " + solver.solveTimeMs + "ms!" + RESET);
+        System.out.println(GREEN + "  [OK] Solution found in " + solver.solveTimeMs + "ms!" + RESET);
         System.out.println();
 
-        // ── Table Header ──────────────────────────────────────
+        // -- Table Header --
         System.out.println("  " + BOLD +
-                "┌──────────┬─────────────┬─────────┬──────────────┬─────────┬──────────┐" + RESET);
+                "+----------+-------------+---------+--------------+---------+----------+" + RESET);
         System.out.printf("  " + BOLD +
-                "│ %-8s │ %-11s │ %-7s │ %-12s │ %-7s │ %-8s │%n" + RESET,
+                "| %-8s | %-11s | %-7s | %-12s | %-7s | %-8s |%n" + RESET,
                 "Position", "Nationality", "Chimney", "Destination", "Cargo", "Departs");
         System.out.println("  " + BOLD +
-                "├──────────┼─────────────┼─────────┼──────────────┼─────────┼──────────┤" + RESET);
+                "+----------+-------------+---------+--------------+---------+----------+" + RESET);
 
-        // ── Table Rows (one per ship position) ───────────────
+        // -- Table Rows (one per ship position) --
         for (int i = 0; i < 5; i++) {
 
             // Get the readable name for each attribute at position i
@@ -180,23 +180,19 @@ public class Printer {
             boolean isPortSaid = solver.solDest[i] == ShipData.PORT_SAID;
             boolean isTea = solver.solCargo[i] == ShipData.TEA;
 
-            // Apply green color + marker to answer cells
-            String destDisplay = isPortSaid ? GREEN + dest + " ◄" + RESET : dest;
-            String carDisplay = isTea ? GREEN + car + " ◄" + RESET : car;
-
             // Pad strings manually because ANSI codes affect String.format length
             String destPadded = padOrColor(dest, 12, isPortSaid);
             String carPadded = padOrColor(car, 7, isTea);
 
-            // Print the row — use raw printf for non-colored cells
-            System.out.printf("  │ %-8s │ %-11s │ %-7s │ %s │ %s │ %-8s │%n",
+            // Print the row - use raw printf for non-colored cells
+            System.out.printf("  | %-8s | %-11s | %-7s | %s | %s | %-8s |%n",
                     pos, nat, col, destPadded, carPadded, tim);
         }
 
-        // ── Table Footer ──────────────────────────────────────
+        // -- Table Footer --
         System.out.println("  " +
-                "└──────────┴─────────────┴─────────┴──────────────┴─────────┴──────────┘");
-        System.out.println("  " + GREEN + "◄ = Answer to puzzle questions" + RESET);
+                "+----------+-------------+---------+--------------+---------+----------+");
+        System.out.println("  " + GREEN + "< = Answer to puzzle questions" + RESET);
         System.out.println();
     }
 
@@ -215,8 +211,8 @@ public class Printer {
         StringBuilder sb = new StringBuilder();
 
         if (colored) {
-            sb.append(GREEN).append(text).append(" ◄").append(RESET);
-            // Adjust: "◄" is 1 extra char, subtract from padding
+            sb.append(GREEN).append(text).append(" <").append(RESET);
+            // Adjust: "<" is 1 extra char, subtract from padding
             for (int i = 0; i < Math.max(0, spaces - 2); i++)
                 sb.append(' ');
         } else {
@@ -233,7 +229,7 @@ public class Printer {
 
     /**
      * Prints a highlighted box showing just the two puzzle answers.
-     * This is the most important output — clearly answers the question.
+     * This is the most important output - clearly answers the question.
      *
      * @param solver the ShipSolver that has already been run
      */
@@ -246,20 +242,20 @@ public class Printer {
         int teaPos = solver.getTeaPosition();
         String teaShip = (teaPos >= 0) ? ShipData.NAT[solver.solNat[teaPos]] : "Unknown";
 
-        System.out.println(GREEN + "  ╔═══════════════════════════════════════════════════╗" + RESET);
-        System.out.println(GREEN + "  ║" + RESET + BOLD + "           PUZZLE ANSWERS                          " + RESET
-                + GREEN + "║" + RESET);
-        System.out.println(GREEN + "  ╠═══════════════════════════════════════════════════╣" + RESET);
+        System.out.println(GREEN + "  +===================================================+" + RESET);
+        System.out.println(GREEN + "  |" + RESET + BOLD + "           PUZZLE ANSWERS                          " + RESET
+                + GREEN + "|" + RESET);
+        System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.printf(
-                GREEN + "  ║" + RESET + "  Q1: Which ship goes to Port Said?              " + GREEN + "║%n" + RESET);
-        System.out.printf(GREEN + "  ║" + RESET + GREEN + "      → The %-37s" + RESET + GREEN + "║%n" + RESET,
+                GREEN + "  |" + RESET + "  Q1: Which ship goes to Port Said?              " + GREEN + "|%n" + RESET);
+        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + "|%n" + RESET,
                 portSaidShip + " ship");
-        System.out.println(GREEN + "  ╠═══════════════════════════════════════════════════╣" + RESET);
+        System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.printf(
-                GREEN + "  ║" + RESET + "  Q2: Which ship carries tea?                    " + GREEN + "║%n" + RESET);
-        System.out.printf(GREEN + "  ║" + RESET + GREEN + "      → The %-37s" + RESET + GREEN + "║%n" + RESET,
+                GREEN + "  |" + RESET + "  Q2: Which ship carries tea?                    " + GREEN + "|%n" + RESET);
+        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + "|%n" + RESET,
                 teaShip + " ship");
-        System.out.println(GREEN + "  ╚═══════════════════════════════════════════════════╝" + RESET);
+        System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.println();
     }
 
@@ -276,9 +272,9 @@ public class Printer {
      */
     public static void printStepByStep(java.util.Scanner scanner) {
         System.out.println();
-        System.out.println(YELLOW + "  ═══════════════════════════════════════════════════════" + RESET);
+        System.out.println(YELLOW + "  =========================================================" + RESET);
         System.out.println(YELLOW + "  STEP-BY-STEP DEDUCTION  (Press ENTER for each step)" + RESET);
-        System.out.println(YELLOW + "  ═══════════════════════════════════════════════════════" + RESET);
+        System.out.println(YELLOW + "  =========================================================" + RESET);
         System.out.println();
 
         // Go through each deduction step stored in ShipData
@@ -299,7 +295,7 @@ public class Printer {
         }
 
         System.out.println();
-        System.out.println(GREEN + "  ✔ All deduction steps complete!" + RESET);
+        System.out.println(GREEN + "  [OK] All deduction steps complete!" + RESET);
         System.out.println();
     }
 
@@ -315,9 +311,9 @@ public class Printer {
      */
     public static void printQuizFeedback(boolean correct, String answer) {
         if (correct) {
-            System.out.println("  " + GREEN + "✔ CORRECT! Well done!" + RESET);
+            System.out.println("  " + GREEN + "[OK] CORRECT! Well done!" + RESET);
         } else {
-            System.out.println("  " + RED + "✘ Wrong! The correct answer was: " + BOLD + answer + RESET);
+            System.out.println("  " + RED + "[X] Wrong! The correct answer was: " + BOLD + answer + RESET);
         }
         System.out.println();
     }
@@ -331,11 +327,11 @@ public class Printer {
     public static void printQuizScore(int score, int total) {
         int percent = (int) Math.round((score * 100.0) / total);
         System.out.println();
-        System.out.println(CYAN + "  ╔══════════════════════════════════════╗" + RESET);
+        System.out.println(CYAN + "  +======================================+" + RESET);
         System.out.println(
-                CYAN + "  ║" + RESET + BOLD + "          QUIZ COMPLETE!              " + RESET + CYAN + "║" + RESET);
-        System.out.println(CYAN + "  ╠══════════════════════════════════════╣" + RESET);
-        System.out.printf(CYAN + "  ║" + RESET + "  Score: %d / %d (%d%%)                 " + CYAN + "║%n" + RESET,
+                CYAN + "  |" + RESET + BOLD + "          QUIZ COMPLETE!              " + RESET + CYAN + "|" + RESET);
+        System.out.println(CYAN + "  +======================================+" + RESET);
+        System.out.printf(CYAN + "  |" + RESET + "  Score: %d / %d (%d%%)                 " + CYAN + "|%n" + RESET,
                 score, total, percent);
 
         // Show a message based on performance
@@ -347,8 +343,8 @@ public class Printer {
         else
             msg = "  Keep studying the clues!          ";
 
-        System.out.println(CYAN + "  ║" + RESET + msg + CYAN + "║" + RESET);
-        System.out.println(CYAN + "  ╚══════════════════════════════════════╝" + RESET);
+        System.out.println(CYAN + "  |" + RESET + msg + CYAN + "|" + RESET);
+        System.out.println(CYAN + "  +======================================+" + RESET);
         System.out.println();
     }
 
@@ -356,7 +352,7 @@ public class Printer {
      * Prints a simple separator line between menu sections.
      */
     public static void printSeparator() {
-        System.out.println("  " + BLUE + "─────────────────────────────────────────────────────────" + RESET);
+        System.out.println("  " + BLUE + "---------------------------------------------------------" + RESET);
         System.out.println();
     }
 

@@ -3,29 +3,29 @@ import java.util.Scanner;
 /**
  * ============================================================
  *  FILE: Main.java
- *  PURPOSE: Entry point for Puzzle 3 – The Five Ships program.
+ *  PURPOSE: Entry point for Puzzle 3 - The Five Ships program.
  *           Controls the main menu loop and coordinates all
  *           other classes.
  *
  *  HOW TO COMPILE AND RUN:
- *  ─────────────────────────────────────────────────────────
- *  Step 1 — Open a terminal in the folder containing all .java files.
+ *  ---------------------------------------------------------
+ *  Step 1 -- Open a terminal in the folder containing all .java files.
  *
- *  Step 2 — Compile ALL files at once:
+ *  Step 2 -- Compile ALL files at once:
  *    javac *.java
  *
- *  Step 3 — Run the program:
+ *  Step 3 -- Run the program:
  *    java Main
- *  ─────────────────────────────────────────────────────────
+ *  ---------------------------------------------------------
  *
  *  FILE STRUCTURE & RESPONSIBILITIES:
- *  ─────────────────────────────────────────────────────────
- *  Main.java       ← YOU ARE HERE. Menu loop & program flow.
- *  ShipData.java   ← All constants (names, indices, clues).
- *  ShipSolver.java ← Core constraint-satisfaction algorithm.
- *  Printer.java    ← All formatted console output & colors.
- *  QuizMode.java   ← Interactive quiz where user guesses answers.
- *  ─────────────────────────────────────────────────────────
+ *  ---------------------------------------------------------
+ *  Main.java       -> YOU ARE HERE. Menu loop & program flow.
+ *  ShipData.java   -> All constants (names, indices, clues).
+ *  ShipSolver.java -> Core constraint-satisfaction algorithm.
+ *  Printer.java    -> All formatted console output & colors.
+ *  QuizMode.java   -> Interactive quiz where user guesses answers.
+ *  ---------------------------------------------------------
  *
  *  DESIGN PRINCIPLE: Single Responsibility
  *  Each file does ONE job. Main.java only controls flow.
@@ -36,18 +36,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // ── Setup ─────────────────────────────────────────────
+        // -- Setup -------------------------------------------------
         // Scanner reads keyboard input from the user throughout the program
         Scanner scanner = new Scanner(System.in);
 
-        // Create a ShipSolver instance — it stores the solution once solved
+        // Create a ShipSolver instance -- it stores the solution once solved
         ShipSolver solver = new ShipSolver();
 
         // Track whether the puzzle has been solved yet
         // Quiz mode and step-by-step require the solution to exist first
         boolean isSolved = false;
 
-        // ── Opening Banner ────────────────────────────────────
+        // -- Opening Banner ----------------------------------------
         Printer.printBanner();
 
         // Brief introduction text
@@ -56,7 +56,7 @@ public class Main {
         System.out.println("  There are 5 ships with 5 attributes each, and 15 clues.");
         System.out.println();
 
-        // ── Main Menu Loop ────────────────────────────────────
+        // -- Main Menu Loop ----------------------------------------
         // The program keeps showing the menu until the user chooses to exit.
         // This is a standard "menu-driven" program structure.
         boolean running = true;
@@ -72,7 +72,7 @@ public class Main {
             // Parse and handle the user's choice
             switch (input) {
 
-                // ── Option 1: View Clues ─────────────────────
+                // -- Option 1: View Clues -------------------------
                 case "1":
                     Printer.printSeparator();
                     Printer.printClues();
@@ -82,7 +82,7 @@ public class Main {
                     System.out.println();
                     break;
 
-                // ── Option 2: Solve the Puzzle ───────────────
+                // -- Option 2: Solve the Puzzle -------------------
                 case "2":
                     Printer.printSeparator();
 
@@ -112,11 +112,11 @@ public class Main {
                     System.out.println();
                     break;
 
-                // ── Option 3: Step-by-Step Deduction ─────────
+                // -- Option 3: Step-by-Step Deduction -------------
                 case "3":
                     Printer.printSeparator();
 
-                    // Check if solver has been run — we need the solution
+                    // Check if solver has been run -- we need the solution
                     if (!isSolved) {
                         System.out.println("  " + Printer.YELLOW +
                             "[!] Please solve the puzzle first (Option 2) before viewing deduction steps." +
@@ -138,7 +138,7 @@ public class Main {
                     System.out.println();
                     break;
 
-                // ── Option 4: Quiz Mode ───────────────────────
+                // -- Option 4: Quiz Mode --------------------------
                 case "4":
                     Printer.printSeparator();
 
@@ -149,7 +149,7 @@ public class Main {
                             "[*] Solving the puzzle first before starting quiz..." + Printer.RESET);
                         solver.solve();
                         isSolved = true;
-                        System.out.println("  " + Printer.GREEN + "[✔] Ready! Starting quiz..." + Printer.RESET);
+                        System.out.println("  " + Printer.GREEN + "[OK] Ready! Starting quiz..." + Printer.RESET);
                     }
 
                     // Run the full interactive quiz
@@ -160,19 +160,19 @@ public class Main {
                     System.out.println();
                     break;
 
-                // ── Option 5: Exit ────────────────────────────
+                // -- Option 5: Exit -------------------------------
                 case "5":
                     System.out.println();
                     System.out.println(Printer.CYAN +
                         "  Thank you for using the Five Ships Solver!" + Printer.RESET);
-                    System.out.println("  — Discrete Structures Group Assignment");
+                    System.out.println("  -- Discrete Structures Group Assignment");
                     System.out.println();
                     running = false; // Exit the while loop, ending the program
                     break;
 
-                // ── Invalid Input ─────────────────────────────
+                // -- Invalid Input --------------------------------
                 default:
-                    // User typed something that isn't 1–5
+                    // User typed something that isn't 1-5
                     Printer.printInvalidInput();
                     break;
             }
@@ -181,6 +181,6 @@ public class Main {
         // Close the scanner to free system resources
         scanner.close();
 
-        // Program ends here — Java exits automatically
+        // Program ends here -- Java exits automatically
     }
 }

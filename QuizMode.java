@@ -23,7 +23,7 @@ public class QuizMode {
 
     // ----------------------------------------------------------
     //  MAIN QUIZ RUNNER
-    //  This is the only public method — it runs the full quiz.
+    //  This is the only public method -- it runs the full quiz.
     // ----------------------------------------------------------
 
     /**
@@ -37,19 +37,19 @@ public class QuizMode {
 
         System.out.println();
         System.out.println(Printer.MAGENTA +
-            "  ═══════════════════════════════════════════════════════" + Printer.RESET);
+            "  =========================================================" + Printer.RESET);
         System.out.println(Printer.MAGENTA +
-            "  QUIZ MODE — Can you figure out the ships?" + Printer.RESET);
+            "  QUIZ MODE -- Can you figure out the ships?" + Printer.RESET);
         System.out.println(Printer.MAGENTA +
             "  Answer based on the 15 clues. Good luck!" + Printer.RESET);
         System.out.println(Printer.MAGENTA +
-            "  ═══════════════════════════════════════════════════════" + Printer.RESET);
+            "  =========================================================" + Printer.RESET);
         System.out.println();
 
         int score = 0;       // Number of correct answers
         int totalQ = 0;      // Total questions asked
 
-        // ── QUESTION 1 ───────────────────────────────────────
+        // -- QUESTION 1 -------------------------------------------
         // Ask which ship goes to Hamburg
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -61,12 +61,12 @@ public class QuizMode {
         int correctNat = solver.solNat[hamburgPos]; // e.g., 0 = Greek
 
         int guess = getChoice(scanner, 1, 5);
-        // User enters 1–5, but our index is 0–4, so subtract 1
+        // User enters 1-5, but our index is 0-4, so subtract 1
         boolean correct = (guess - 1) == correctNat;
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.NAT[correctNat]);
 
-        // ── QUESTION 2 ───────────────────────────────────────
+        // -- QUESTION 2 -------------------------------------------
         // Ask which ship goes to Manila
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -80,7 +80,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.NAT[correctNat2]);
 
-        // ── QUESTION 3 ───────────────────────────────────────
+        // -- QUESTION 3 -------------------------------------------
         // Ask what time the English ship departs
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -88,13 +88,13 @@ public class QuizMode {
         System.out.println("  [1] 5:00   [2] 6:00   [3] 7:00   [4] 8:00   [5] 9:00");
 
         int engPos = findNatPos(solver, ShipData.ENGLISH);
-        int correctTime = solver.solTime[engPos]; // Index 0–4 maps to 5–9am
+        int correctTime = solver.solTime[engPos]; // Index 0-4 maps to 5-9am
         guess = getChoice(scanner, 1, 5);
         correct = (guess - 1) == correctTime;
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.TIME[correctTime]);
 
-        // ── QUESTION 4 ───────────────────────────────────────
+        // -- QUESTION 4 -------------------------------------------
         // Ask what cargo the middle ship (position 3) carries
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -108,7 +108,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.CARGO[correctCargo]);
 
-        // ── QUESTION 5 ───────────────────────────────────────
+        // -- QUESTION 5 -------------------------------------------
         // Ask what chimney color the French ship has
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -122,7 +122,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.COLOR[correctColor]);
 
-        // ── QUESTION 6 ───────────────────────────────────────
+        // -- QUESTION 6 -------------------------------------------
         // Ask which ship goes to Port Said (the main puzzle question!)
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -137,7 +137,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.NAT[correctPS]);
 
-        // ── QUESTION 7 ───────────────────────────────────────
+        // -- QUESTION 7 -------------------------------------------
         // Ask which ship carries Tea (the second main question!)
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -152,7 +152,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.NAT[correctTea]);
 
-        // ── QUESTION 8 ───────────────────────────────────────
+        // -- QUESTION 8 -------------------------------------------
         // Ask what position the Greek ship is at
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -161,12 +161,12 @@ public class QuizMode {
 
         int greekPos = findNatPos(solver, ShipData.GREEK);
         guess = getChoice(scanner, 1, 5);
-        // User enters 1–5, position index is 0–4
+        // User enters 1-5, position index is 0-4
         correct = (guess - 1) == greekPos;
         if (correct) score++;
         Printer.printQuizFeedback(correct, "Position " + (greekPos + 1));
 
-        // ── QUESTION 9 ───────────────────────────────────────
+        // -- QUESTION 9 -------------------------------------------
         // Ask what cargo the border ship carries
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -174,7 +174,7 @@ public class QuizMode {
         System.out.println("  [1] Coffee   [2] Tea   [3] Cocoa   [4] Rice   [5] Corn");
 
         // Border ship is whichever of position 0 or 4 carries corn (Clue 12)
-        int correctBorderCargo = solver.solCargo[0]; // Could also be position 4 — corn is always border
+        int correctBorderCargo = solver.solCargo[0]; // Could also be position 4 -- corn is always border
         // Actually check which border has corn
         for (int borderIdx : new int[]{0, 4}) {
             if (solver.solCargo[borderIdx] == ShipData.CORN) {
@@ -187,7 +187,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.CARGO[correctBorderCargo]);
 
-        // ── QUESTION 10 ──────────────────────────────────────
+        // -- QUESTION 10 ------------------------------------------
         // Ask what the departure time of the Spanish ship is
         totalQ++;
         System.out.println("  " + Printer.BOLD + "Question " + totalQ + ":" + Printer.RESET +
@@ -201,7 +201,7 @@ public class QuizMode {
         if (correct) score++;
         Printer.printQuizFeedback(correct, ShipData.TIME[correctSpTime]);
 
-        // ── FINAL SCORE ───────────────────────────────────────
+        // -- FINAL SCORE -------------------------------------------
         Printer.printQuizScore(score, totalQ);
     }
 
@@ -226,7 +226,7 @@ public class QuizMode {
             try {
                 int val = Integer.parseInt(input); // Convert string to int
                 if (val >= min && val <= max) {
-                    return val; // Valid — return it
+                    return val; // Valid -- return it
                 } else {
                     System.out.println("  " + Printer.RED +
                         "[!] Please enter a number between " + min + " and " + max + "." + Printer.RESET);
@@ -240,11 +240,11 @@ public class QuizMode {
     }
 
     /**
-     * Finds the position (0–4) of a given destination in the solution.
+     * Finds the position (0-4) of a given destination in the solution.
      *
      * @param solver  the solved ShipSolver
      * @param destVal the destination constant (e.g., ShipData.HAMBURG)
-     * @return position index (0–4)
+     * @return position index (0-4)
      */
     private static int findDestPos(ShipSolver solver, int destVal) {
         for (int i = 0; i < 5; i++) {
@@ -254,11 +254,11 @@ public class QuizMode {
     }
 
     /**
-     * Finds the position (0–4) of a given nationality in the solution.
+     * Finds the position (0-4) of a given nationality in the solution.
      *
      * @param solver the solved ShipSolver
      * @param natVal the nationality constant (e.g., ShipData.GREEK)
-     * @return position index (0–4)
+     * @return position index (0-4)
      */
     private static int findNatPos(ShipSolver solver, int natVal) {
         for (int i = 0; i < 5; i++) {
