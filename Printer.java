@@ -247,13 +247,13 @@ public class Printer {
                 + GREEN + "|" + RESET);
         System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.printf(
-                GREEN + "  |" + RESET + "  Q1: Which ship goes to Port Said?              " + GREEN + "|%n" + RESET);
-        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + "|%n" + RESET,
+                GREEN + "  |" + RESET + "  Q1: Which ship goes to Port Said?                " + GREEN + "|%n" + RESET);
+        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + " |%n" + RESET,
                 portSaidShip + " ship");
         System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.printf(
-                GREEN + "  |" + RESET + "  Q2: Which ship carries tea?                    " + GREEN + "|%n" + RESET);
-        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + "|%n" + RESET,
+                GREEN + "  |" + RESET + "  Q2: Which ship carries tea?                      " + GREEN + "|%n" + RESET);
+        System.out.printf(GREEN + "  |" + RESET + GREEN + "      -> The %-37s" + RESET + GREEN + " |%n" + RESET,
                 teaShip + " ship");
         System.out.println(GREEN + "  +===================================================+" + RESET);
         System.out.println();
@@ -343,7 +343,7 @@ public class Printer {
         else
             msg = "  Keep studying the clues!          ";
 
-        System.out.println(CYAN + "  |" + RESET + msg + CYAN + "|" + RESET);
+        System.out.println(CYAN + "  |" + RESET + msg + CYAN + "  |" + RESET);
         System.out.println(CYAN + "  +======================================+" + RESET);
         System.out.println();
     }
